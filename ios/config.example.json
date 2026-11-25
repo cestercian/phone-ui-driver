@@ -1,0 +1,8 @@
+{
+  "udid": "<the device's or simulator's UDID>",
+  "allowed_bundles": ["com.example.app"],
+  "forbidden_labels": ["call", "pay", "payment", "purchase", "buy", "delete", "block", "report", "log out", "sign out"],
+  "development_team": "",
+  "bundle_prefix": "com.example",
+  "output_dir": "~/phone-ui-driver-runs/ios"
+}

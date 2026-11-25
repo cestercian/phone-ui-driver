@@ -1,0 +1,13 @@
+.DS_Store
+__pycache__/
+
+# Local configuration names a device. It never belongs in the repository.
+config.json
+*.local
+
+# Build products and generated projects
+ios/build/
+ios/*.xcodeproj/
+
+# Run output (logs and screenshots of a phone) if someone points output_dir into the checkout
+runs/

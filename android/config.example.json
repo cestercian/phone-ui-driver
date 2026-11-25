@@ -1,0 +1,6 @@
+{
+  "serial": "<the device's serial, from `adb devices`>",
+  "allowed_packages": ["com.example.app"],
+  "forbidden_labels": ["call", "pay", "payment", "purchase", "buy", "delete", "block", "report", "log out", "sign out"],
+  "output_dir": "~/phone-ui-driver-runs/android"
+}

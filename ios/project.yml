@@ -1,0 +1,42 @@
+name: UIDriver
+options:
+  bundleIdPrefix: ${UIDRIVER_BUNDLE_PREFIX}
+  deploymentTarget:
+    iOS: "17.0"
+settings:
+  base:
+    DEVELOPMENT_TEAM: ${UIDRIVER_TEAM}
+    CODE_SIGN_STYLE: Automatic
+    SWIFT_VERSION: "5.0"
+    GENERATE_INFOPLIST_FILE: YES
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    TARGETED_DEVICE_FAMILY: "1,2"
+targets:
+  UIDriverHost:
+    type: application
+    platform: iOS
+    sources: [Host]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: ${UIDRIVER_BUNDLE_PREFIX}.uidriver
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_CFBundleDisplayName: UIDriver
+  UIDriverTests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources: [UITests]
+    dependencies:
+      - target: UIDriverHost
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: ${UIDRIVER_BUNDLE_PREFIX}.uidriver.tests
+        TEST_TARGET_NAME: UIDriverHost
+schemes:
+  UIDriver:
+    build:
+      targets:
+        UIDriverHost: all
+        UIDriverTests: [test]
+    test:
+      targets: [UIDriverTests]
